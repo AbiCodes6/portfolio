@@ -1,0 +1,95 @@
+/* ===================== Global ===================== */
+* { box-sizing:border-box; margin:0; padding:0; font-family:'Inter', 'Poppins', sans-serif; }
+body {
+  background: linear-gradient(135deg, #f0f4ff, #d9e6ff);
+  min-height:100vh;
+  color:#1a1a1a;
+  line-height:1.6;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* ===================== Animated Background Blobs ===================== */
+.blob {
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.6;
+  animation: float 20s infinite ease-in-out;
+  z-index:-1;
+}
+
+.blob1 { width:600px; height:600px; background:linear-gradient(135deg, #836fff, #a87fff); top:-10%; left:-15%; animation-delay:0s;}
+.blob2 { width:500px; height:500px; background:linear-gradient(135deg, #6ad3d8, #84e1d8); top:10%; right:-10%; animation-delay:5s;}
+.blob3 { width:400px; height:400px; background:linear-gradient(135deg, #ffd6a5, #ffbfa0); bottom:-10%; left:20%; animation-delay:10s;}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(30px) translateX(20px) scale(1.1); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+
+/* ===================== Container ===================== */
+.container { width:90%; max-width:1100px; margin:0 auto; padding:30px 0; }
+
+/* ===================== Header ===================== */
+.site-header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; position:sticky; top:0; z-index:50; background:transparent; }
+.brand { font-weight:700; font-size:22px; color:#6a5acd; }
+.brand span { color:#333; margin-left:5px; }
+nav a { text-decoration:none; margin-left:20px; font-weight:600; color:#1a1a1a; transition:0.3s; }
+nav a:hover { color:#6a5acd; }
+
+/* ===================== Buttons ===================== */
+.btn {
+  padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:600;
+  transition:0.3s; display:inline-block; margin-top:10px;
+}
+.btn.primary { background:linear-gradient(90deg,#6a5acd,#836fff); color:white; }
+.btn.primary:hover { opacity:0.85; }
+.btn.ghost { background:transparent; border:2px solid #6a5acd; color:#6a5acd; }
+.btn.ghost:hover { background:#6a5acd; color:white; }
+
+/* ===================== Hero Section ===================== */
+.hero-left { max-width:600px; margin:0 auto; padding-top:100px; text-align:center; }
+.hero-title { font-size:3rem; margin:15px 0; color:#6a5acd; }
+.hero-sub { font-size:1.2rem; color:#333; margin-bottom:20px; }
+
+/* ===================== Sections ===================== */
+section { padding:60px 0; }
+.section-title { font-size:2rem; color:#6a5acd; margin-bottom:40px; text-align:center; }
+
+/* ===================== Projects Grid ===================== */
+.projects .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; }
+.project { background: rgba(255,255,255,0.85); border-radius:16px; padding:25px; box-shadow:0 12px 35px rgba(0,0,0,0.1); transition:0.3s; }
+.project:hover { transform: translateY(-5px) scale(1.02); box-shadow:0 22px 50px rgba(0,0,0,0.15); }
+.project h3 { color:#6a5acd; margin-bottom:10px; }
+.project p { color:#333; line-height:1.5; }
+
+/* ===================== Project Cards / Case Studies ===================== */
+.project-card { background:white; padding:45px; border-radius:18px; box-shadow:0 18px 50px rgba(0,0,0,0.12); margin-bottom:50px; }
+.project-card h2 { font-size:2.5rem; color:#6a5acd; margin-bottom:20px; text-align:center; }
+.project-card h3 { font-size:1.5rem; margin-top:25px; margin-bottom:15px; color:#444; }
+.project-card p { color:#333; margin-bottom:15px; font-size:1.1rem; }
+.project-card ul { margin-left:20px; margin-bottom:20px; }
+.project-card ul li { margin-bottom:10px; }
+
+/* ===================== Contact ===================== */
+.contact p { margin-bottom:12px; font-size:1.1rem; text-align:center; }
+.contact a { color:#6a5acd; text-decoration:none; }
+.contact a:hover { text-decoration:underline; }
+
+/* ===================== Footer ===================== */
+.footer { text-align:center; padding:40px 0; color:#555; font-size:0.95rem; }
+
+/* ===================== Responsive ===================== */
+@media (max-width:992px) {
+  .hero-title { font-size:2.5rem; }
+  .projects .grid { grid-template-columns:1fr; }
+  nav { display:flex; flex-direction:column; gap:10px; align-items:center; }
+}
+
+@media (max-width:600px) {
+  .hero-title { font-size:2rem; }
+  .hero-sub { font-size:1rem; }
+  .btn { padding:8px 14px; font-size:0.9rem; }
+}
